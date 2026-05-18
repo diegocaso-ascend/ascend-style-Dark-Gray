@@ -573,3 +573,23 @@ input[type="checkbox"] { accent-color: var(--sb-red) !important; }
    ALERTAS
    ============================================================ */
 .hl_login .alert { color: #1a1a1a !important; }
+
+/* ============================================================
+   EXCLUIR: Preguntar a la IA (mantener estilo original GHL)
+   ============================================================ */
+#hl_header--copilot-icon,
+#hl_header--copilot-icon:hover {
+    background: unset !important;
+    border: unset !important;
+    border-radius: unset !important;
+    box-shadow: unset !important;
+    transform: unset !important;
+}
+
+#hl_header--copilot-icon svg,
+#hl_header--copilot-icon span,
+#hl_header--copilot-icon * {
+    color: unset !important;
+    fill: unset !important;
+    stroke: unset !important;
+}
