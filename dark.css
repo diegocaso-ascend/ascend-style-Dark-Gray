@@ -249,7 +249,6 @@ select.removeShadow,
     border-left: 3px solid transparent !important;
 }
 
-/* Reposo → blanco para que se lean sobre el fondo gris */
 #sidebar-v2 nav a span,
 #sidebar-v2 nav a i {
     color: var(--sb-text) !important;
@@ -336,25 +335,27 @@ select.removeShadow,
 }
 
 /* ============================================================
-   TOPBAR — BASE (botones nativos de GHL)
+   TOPBAR — BASE
+   Excluye #hl_header--copilot-icon en todos los selectores
    ============================================================ */
 .hl_header {
     background-color: var(--sb-bg) !important;
     border-bottom: 1px solid rgba(31, 41, 55, 0.4) !important;
 }
 
-.hl_header .btn-circle,
+/* Botones nativos — excluye el copilot-icon explícitamente */
+.hl_header .btn-circle:not(#hl_header--copilot-icon),
 .hl_header .feedback-toggle-btn,
 .hl_header button.rounded-full,
-.hl_header a[role="button"] {
+.hl_header a[role="button"]:not(#hl_header--copilot-icon) {
     background: var(--sb-bg-dark) !important;
     border: 1px solid rgba(156, 163, 175, 0.3) !important;
     border-radius: 50% !important;
     transition: background 0.25s ease, border-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease !important;
 }
 
-.hl_header .btn-circle i,
-.hl_header .btn-circle svg,
+.hl_header .btn-circle:not(#hl_header--copilot-icon) i,
+.hl_header .btn-circle:not(#hl_header--copilot-icon) svg,
 .hl_header button.rounded-full i,
 .hl_header button.rounded-full svg,
 .hl_header .feedback-toggle-btn svg,
@@ -364,8 +365,7 @@ select.removeShadow,
     stroke: var(--sb-text) !important;
 }
 
-/* Hover → gris más oscuro + borde blanco (sin rojo) */
-.hl_header .btn-circle:hover,
+.hl_header .btn-circle:not(#hl_header--copilot-icon):hover,
 .hl_header .feedback-toggle-btn:hover,
 .hl_header button.rounded-full:hover {
     background: var(--sb-bg-darker) !important;
@@ -373,8 +373,8 @@ select.removeShadow,
     transform: translateY(-2px) !important;
     box-shadow: 0 4px 12px rgba(0,0,0,0.4) !important;
 }
-.hl_header .btn-circle:hover i,
-.hl_header .btn-circle:hover svg,
+.hl_header .btn-circle:not(#hl_header--copilot-icon):hover i,
+.hl_header .btn-circle:not(#hl_header--copilot-icon):hover svg,
 .hl_header button.rounded-full:hover i,
 .hl_header button.rounded-full:hover svg,
 .hl_header .feedback-toggle-btn:hover .feedback-toggle-icon {
@@ -382,7 +382,9 @@ select.removeShadow,
     fill: var(--sb-text) !important;
 }
 
-/* Botón ? (help) */
+/* ============================================================
+   TOPBAR — BOTÓN ? (help)
+   ============================================================ */
 #hl_header--help-icon {
     background: transparent !important;
     box-shadow: inset 0 0 0 50px var(--sb-bg-dark) !important;
@@ -394,12 +396,43 @@ select.removeShadow,
     border-color: var(--sb-text) !important;
 }
 
+/* ============================================================
+   TOPBAR — PREGUNTAR A LA IA (copilot) — estilo original GHL
+   ============================================================ */
+#hl_header--copilot-icon {
+    background: rgb(255, 255, 255) !important;
+    border: none !important;
+    border-radius: 20px !important;
+    box-shadow: none !important;
+    transform: none !important;
+    transition: opacity 0.25s ease !important;
+}
+#hl_header--copilot-icon:hover {
+    background: rgb(255, 255, 255) !important;
+    border: none !important;
+    box-shadow: none !important;
+    transform: none !important;
+    opacity: 0.85 !important;
+}
+#hl_header--copilot-icon svg,
+#hl_header--copilot-icon span {
+    color: initial !important;
+    fill: initial !important;
+    stroke: initial !important;
+}
+
+/* ============================================================
+   TOPBAR — BADGES
+   ============================================================ */
 .hl_header .Canny_Badge,
 .hl_header .bg-danger,
 .hl_header .badge {
     background-color: var(--sb-red) !important;
 }
 
+/* ============================================================
+   TOPBAR — AVATAR
+   ============================================================ */
 .hl_header .avatar .avatar_img {
     background-color: var(--sb-bg-dark) !important;
     color: var(--sb-text) !important;
@@ -410,7 +443,7 @@ select.removeShadow,
 }
 
 /* ============================================================
-   TOPBAR — TELÉFONO (hover gris oscuro, SIN rojo)
+   TOPBAR — TELÉFONO (sin rojo en hover)
    ============================================================ */
 .hl_header button[aria-label="Llamada de voz"],
 .hl_header button.bg-success-600 {
@@ -573,23 +606,3 @@ input[type="checkbox"] { accent-color: var(--sb-red) !important; }
    ALERTAS
    ============================================================ */
 .hl_login .alert { color: #1a1a1a !important; }
-
-/* ============================================================
-   EXCLUIR: Preguntar a la IA (mantener estilo original GHL)
-   ============================================================ */
-#hl_header--copilot-icon,
-#hl_header--copilot-icon:hover {
-    background: unset !important;
-    border: unset !important;
-    border-radius: unset !important;
-    box-shadow: unset !important;
-    transform: unset !important;
-}
-
-#hl_header--copilot-icon svg,
-#hl_header--copilot-icon span,
-#hl_header--copilot-icon * {
-    color: unset !important;
-    fill: unset !important;
-    stroke: unset !important;
-}
