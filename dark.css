@@ -108,7 +108,6 @@ select.removeShadow,
 }
 
 .hl_login .form-group { margin-bottom: 15px !important; }
-
 .hl_login .divider { display: none !important; }
 
 .hl_login .form-control,
@@ -210,9 +209,7 @@ select.removeShadow,
     margin-bottom: 10px !important;
     transition: all 0.25s ease !important;
 }
-#backButtonv2:hover {
-    background-color: var(--sb-bg-dark) !important;
-}
+#backButtonv2:hover { background-color: var(--sb-bg-dark) !important; }
 #backButtonv2 i, #backButtonv2 span {
     color: var(--sb-icon) !important;
     transition: color 0.25s ease !important;
@@ -232,12 +229,15 @@ select.removeShadow,
 
 #location-switcher-sidbar-v2 {
     background-color: rgba(31, 41, 55, 0.3) !important;
-    border: 1px solid rgba(156, 163, 175, 0.15) !important;
+    border: 2px solid var(--sb-bg-darker) !important;
     border-radius: 10px !important;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3) !important;
     transition: all 0.25s ease !important;
 }
 #location-switcher-sidbar-v2:hover {
     background-color: var(--sb-bg-dark) !important;
+    border-color: var(--sb-text) !important;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.4) !important;
 }
 #location-switcher-sidbar-v2 span,
 #location-switcher-sidbar-v2 div { color: var(--sb-text) !important; }
@@ -249,9 +249,10 @@ select.removeShadow,
     border-left: 3px solid transparent !important;
 }
 
+/* Reposo → blanco para que se lean sobre el fondo gris */
 #sidebar-v2 nav a span,
 #sidebar-v2 nav a i {
-    color: var(--sb-icon) !important;
+    color: var(--sb-text) !important;
     transition: all 0.2s ease !important;
 }
 
@@ -310,12 +311,15 @@ select.removeShadow,
 .hl_account {
     border-radius: 8px !important;
     padding: 8px !important;
-    border: 1px solid rgba(156, 163, 175, 0.1) !important;
+    border: 1px solid rgba(255,255,255,0.15) !important;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.3) !important;
     margin-bottom: 6px !important;
     transition: all 0.2s ease !important;
 }
 .hl_account:hover {
     background: var(--sb-bg-dark) !important;
+    border-color: var(--sb-text) !important;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.4) !important;
     transform: translateX(3px) !important;
 }
 
@@ -332,7 +336,7 @@ select.removeShadow,
 }
 
 /* ============================================================
-   TOPBAR
+   TOPBAR — BASE (botones nativos de GHL)
    ============================================================ */
 .hl_header {
     background-color: var(--sb-bg) !important;
@@ -341,37 +345,58 @@ select.removeShadow,
 
 .hl_header .btn-circle,
 .hl_header .feedback-toggle-btn,
-.hl_header button.rounded-full {
+.hl_header button.rounded-full,
+.hl_header a[role="button"] {
     background: var(--sb-bg-dark) !important;
-    border: none !important;
-    transition: all 0.25s ease !important;
+    border: 1px solid rgba(156, 163, 175, 0.3) !important;
+    border-radius: 50% !important;
+    transition: background 0.25s ease, border-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease !important;
 }
 
+.hl_header .btn-circle i,
+.hl_header .btn-circle svg,
+.hl_header button.rounded-full i,
+.hl_header button.rounded-full svg,
+.hl_header .feedback-toggle-btn svg,
+.hl_header .feedback-toggle-icon {
+    color: var(--sb-text) !important;
+    fill: var(--sb-text) !important;
+    stroke: var(--sb-text) !important;
+}
+
+/* Hover → gris más oscuro + borde blanco (sin rojo) */
+.hl_header .btn-circle:hover,
+.hl_header .feedback-toggle-btn:hover,
+.hl_header button.rounded-full:hover {
+    background: var(--sb-bg-darker) !important;
+    border-color: var(--sb-text) !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.4) !important;
+}
+.hl_header .btn-circle:hover i,
+.hl_header .btn-circle:hover svg,
+.hl_header button.rounded-full:hover i,
+.hl_header button.rounded-full:hover svg,
+.hl_header .feedback-toggle-btn:hover .feedback-toggle-icon {
+    color: var(--sb-text) !important;
+    fill: var(--sb-text) !important;
+}
+
+/* Botón ? (help) */
 #hl_header--help-icon {
     background: transparent !important;
     box-shadow: inset 0 0 0 50px var(--sb-bg-dark) !important;
-    border: 2px solid rgba(156, 163, 175, 0.2) !important;
+    border: 1px solid rgba(156, 163, 175, 0.3) !important;
     border-radius: 50% !important;
 }
-
-.hl_header .btn-circle i {
-    color: var(--sb-icon) !important;
-}
-
-.hl_header .btn-circle:hover {
-    background: var(--sb-bg-darker) !important;
-    transform: translateY(-1px) !important;
-}
-.hl_header .btn-circle:hover i {
-    color: var(--sb-text) !important;
-}
-
 #hl_header--help-icon:hover {
     box-shadow: inset 0 0 0 50px var(--sb-bg-darker) !important;
+    border-color: var(--sb-text) !important;
 }
 
 .hl_header .Canny_Badge,
-.hl_header .bg-danger {
+.hl_header .bg-danger,
+.hl_header .badge {
     background-color: var(--sb-red) !important;
 }
 
@@ -382,6 +407,100 @@ select.removeShadow,
 }
 .hl_header .avatar:hover .avatar_img {
     background-color: var(--sb-bg-darker) !important;
+}
+
+/* ============================================================
+   TOPBAR — TELÉFONO (hover gris oscuro, SIN rojo)
+   ============================================================ */
+.hl_header button[aria-label="Llamada de voz"],
+.hl_header button.bg-success-600 {
+    background-color: var(--sb-bg-dark) !important;
+    border: 1px solid rgba(156, 163, 175, 0.3) !important;
+    border-radius: 50% !important;
+    transition: background 0.25s ease, border-color 0.25s ease, transform 0.25s ease !important;
+}
+.hl_header button[aria-label="Llamada de voz"] svg,
+.hl_header button[aria-label="Llamada de voz"] i,
+.hl_header button.bg-success-600 svg,
+.hl_header button.bg-success-600 i {
+    color: var(--sb-text) !important;
+    stroke: var(--sb-text) !important;
+    fill: var(--sb-text) !important;
+}
+.hl_header button[aria-label="Llamada de voz"]:hover,
+.hl_header button.bg-success-600:hover {
+    background-color: var(--sb-bg-darker) !important;
+    border-color: var(--sb-text) !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.4) !important;
+}
+.hl_header button[aria-label="Llamada de voz"]:hover svg,
+.hl_header button[aria-label="Llamada de voz"]:hover i,
+.hl_header button.bg-success-600:hover svg,
+.hl_header button.bg-success-600:hover i {
+    color: var(--sb-text) !important;
+    stroke: var(--sb-text) !important;
+    fill: var(--sb-text) !important;
+}
+
+/* ============================================================
+   TOPBAR — ASK AI (#template-power-dialer) app Vue externa
+   ============================================================ */
+#template-power-dialer,
+#template-power-dialer .hr-wrapper-container,
+#template-power-dialer .hr-config-provider {
+    background: transparent !important;
+}
+#template-power-dialer button,
+#template-power-dialer a[role="button"] {
+    background-color: var(--sb-bg-dark) !important;
+    background-image: none !important;
+    border: 1px solid rgba(156, 163, 175, 0.3) !important;
+    border-radius: 50% !important;
+    transition: background 0.25s ease, border-color 0.25s ease, transform 0.25s ease !important;
+}
+#template-power-dialer button *,
+#template-power-dialer a[role="button"] * {
+    color: var(--sb-text) !important;
+    fill: var(--sb-text) !important;
+}
+#template-power-dialer button:hover,
+#template-power-dialer a[role="button"]:hover {
+    background-color: var(--sb-bg-darker) !important;
+    background-image: none !important;
+    border-color: var(--sb-text) !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.4) !important;
+}
+
+/* ============================================================
+   TOPBAR — MEGÁFONO (#i18n-feedback) app Vue externa
+   ============================================================ */
+#i18n-feedback,
+#i18n-feedback .hr-wrapper-container,
+#i18n-feedback .hr-config-provider {
+    background: transparent !important;
+}
+#i18n-feedback button,
+#i18n-feedback .feedback-toggle-btn {
+    background-color: var(--sb-bg-dark) !important;
+    background-image: none !important;
+    border: 1px solid rgba(156, 163, 175, 0.3) !important;
+    border-radius: 50% !important;
+    transition: background 0.25s ease, border-color 0.25s ease, transform 0.25s ease !important;
+}
+#i18n-feedback button *,
+#i18n-feedback .feedback-toggle-btn * {
+    color: var(--sb-text) !important;
+    fill: var(--sb-text) !important;
+}
+#i18n-feedback button:hover,
+#i18n-feedback .feedback-toggle-btn:hover {
+    background-color: var(--sb-bg-darker) !important;
+    background-image: none !important;
+    border-color: var(--sb-text) !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.4) !important;
 }
 
 /* ============================================================
@@ -454,90 +573,3 @@ input[type="checkbox"] { accent-color: var(--sb-red) !important; }
    ALERTAS
    ============================================================ */
 .hl_login .alert { color: #1a1a1a !important; }
-
-/* ============================================================
-   FIX: BOTÓN PRUEBA SNAPSHOT (location switcher)
-   ============================================================ */
-#location-switcher-sidbar-v2 {
-    border: 2px solid var(--sb-bg-darker) !important;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.3) !important;
-}
-#location-switcher-sidbar-v2:hover {
-    border-color: var(--sb-text) !important;
-    box-shadow: 0 2px 12px rgba(0,0,0,0.4) !important;
-}
-
-/* ============================================================
-   FIX: LETRAS MENÚ LATERAL EN REPOSO → BLANCO
-   ============================================================ */
-#sidebar-v2 nav a span,
-#sidebar-v2 nav a i {
-    color: var(--sb-text) !important;
-}
-
-/* ============================================================
-   FIX: CUENTAS SUBMENÚ → MARCO VISIBLE
-   ============================================================ */
-.hl_account {
-    border: 1px solid rgba(255,255,255,0.15) !important;
-    box-shadow: 0 1px 4px rgba(0,0,0,0.3) !important;
-}
-.hl_account:hover {
-    border-color: var(--sb-text) !important;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.4) !important;
-}
-
-/* ============================================================
-   FIX: BOTONES TOPBAR (Ask AI, megáfono, teléfono, etc.)
-   ============================================================ */
-.hl_header .btn-circle,
-.hl_header button.rounded-full {
-    background: var(--sb-bg-dark) !important;
-    border: 1px solid rgba(156,163,175,0.3) !important;
-    transition: background 0.25s ease, border-color 0.25s ease !important;
-}
-.hl_header .btn-circle i,
-.hl_header button.rounded-full i,
-.hl_header .btn-circle svg,
-.hl_header button.rounded-full svg {
-    color: var(--sb-text) !important;
-    fill: var(--sb-text) !important;
-}
-.hl_header .btn-circle:hover,
-.hl_header button.rounded-full:hover {
-    background: var(--sb-bg-darker) !important;
-    border-color: var(--sb-text) !important;
-    transform: translateY(-2px) !important;
-    box-shadow: 0 4px 14px rgba(0,0,0,0.4) !important;
-}
-.hl_header .btn-circle:hover i,
-.hl_header button.rounded-full:hover i,
-.hl_header .btn-circle:hover svg,
-.hl_header button.rounded-full:hover svg {
-    color: var(--sb-text) !important;
-    fill: var(--sb-text) !important;
-}
-
-.hl_header button[aria-label="Llamada de voz"],
-.hl_header button.bg-success-600 {
-    background-color: var(--sb-bg-dark) !important;
-    border: 1px solid rgba(156,163,175,0.3) !important;
-    border-radius: 50% !important;
-    transition: all 0.25s ease !important;
-}
-.hl_header button[aria-label="Llamada de voz"] svg,
-.hl_header button.bg-success-600 svg {
-    color: var(--sb-text) !important;
-    stroke: var(--sb-text) !important;
-}
-.hl_header button[aria-label="Llamada de voz"]:hover,
-.hl_header button.bg-success-600:hover {
-    background-color: var(--sb-red) !important;
-    border-color: var(--sb-red) !important;
-    transform: translateY(-2px) !important;
-}
-.hl_header button[aria-label="Llamada de voz"]:hover svg,
-.hl_header button.bg-success-600:hover svg {
-    color: var(--sb-text) !important;
-    stroke: var(--sb-text) !important;
-}
