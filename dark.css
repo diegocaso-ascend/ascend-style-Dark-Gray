@@ -454,3 +454,90 @@ input[type="checkbox"] { accent-color: var(--sb-red) !important; }
    ALERTAS
    ============================================================ */
 .hl_login .alert { color: #1a1a1a !important; }
+
+/* ============================================================
+   FIX: BOTÓN PRUEBA SNAPSHOT (location switcher)
+   ============================================================ */
+#location-switcher-sidbar-v2 {
+    border: 2px solid var(--sb-bg-darker) !important;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3) !important;
+}
+#location-switcher-sidbar-v2:hover {
+    border-color: var(--sb-text) !important;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.4) !important;
+}
+
+/* ============================================================
+   FIX: LETRAS MENÚ LATERAL EN REPOSO → BLANCO
+   ============================================================ */
+#sidebar-v2 nav a span,
+#sidebar-v2 nav a i {
+    color: var(--sb-text) !important;
+}
+
+/* ============================================================
+   FIX: CUENTAS SUBMENÚ → MARCO VISIBLE
+   ============================================================ */
+.hl_account {
+    border: 1px solid rgba(255,255,255,0.15) !important;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.3) !important;
+}
+.hl_account:hover {
+    border-color: var(--sb-text) !important;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.4) !important;
+}
+
+/* ============================================================
+   FIX: BOTONES TOPBAR (Ask AI, megáfono, teléfono, etc.)
+   ============================================================ */
+.hl_header .btn-circle,
+.hl_header button.rounded-full {
+    background: var(--sb-bg-dark) !important;
+    border: 1px solid rgba(156,163,175,0.3) !important;
+    transition: background 0.25s ease, border-color 0.25s ease !important;
+}
+.hl_header .btn-circle i,
+.hl_header button.rounded-full i,
+.hl_header .btn-circle svg,
+.hl_header button.rounded-full svg {
+    color: var(--sb-text) !important;
+    fill: var(--sb-text) !important;
+}
+.hl_header .btn-circle:hover,
+.hl_header button.rounded-full:hover {
+    background: var(--sb-bg-darker) !important;
+    border-color: var(--sb-text) !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.4) !important;
+}
+.hl_header .btn-circle:hover i,
+.hl_header button.rounded-full:hover i,
+.hl_header .btn-circle:hover svg,
+.hl_header button.rounded-full:hover svg {
+    color: var(--sb-text) !important;
+    fill: var(--sb-text) !important;
+}
+
+.hl_header button[aria-label="Llamada de voz"],
+.hl_header button.bg-success-600 {
+    background-color: var(--sb-bg-dark) !important;
+    border: 1px solid rgba(156,163,175,0.3) !important;
+    border-radius: 50% !important;
+    transition: all 0.25s ease !important;
+}
+.hl_header button[aria-label="Llamada de voz"] svg,
+.hl_header button.bg-success-600 svg {
+    color: var(--sb-text) !important;
+    stroke: var(--sb-text) !important;
+}
+.hl_header button[aria-label="Llamada de voz"]:hover,
+.hl_header button.bg-success-600:hover {
+    background-color: var(--sb-red) !important;
+    border-color: var(--sb-red) !important;
+    transform: translateY(-2px) !important;
+}
+.hl_header button[aria-label="Llamada de voz"]:hover svg,
+.hl_header button.bg-success-600:hover svg {
+    color: var(--sb-text) !important;
+    stroke: var(--sb-text) !important;
+}
