@@ -286,6 +286,16 @@ select.removeShadow,
     border: 1px solid rgba(156, 163, 175, 0.2) !important;
     border-radius: 10px !important;
     box-shadow: 0 10px 30px rgba(0,0,0,0.5) !important;
+    max-height: 60vh !important;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+}
+
+.hl_v2-location_switcher .hl_swicher-list,
+.hl_v2-location_switcher [class*="list"],
+.hl_v2-location_switcher [class*="accounts"] {
+    max-height: calc(100vh - 180px) !important;
+    overflow-y: auto !important;
 }
 
 .hl_v2-location_switcher .search-area input[type="search"] {
@@ -336,14 +346,12 @@ select.removeShadow,
 
 /* ============================================================
    TOPBAR — BASE
-   Excluye #hl_header--copilot-icon en todos los selectores
    ============================================================ */
 .hl_header {
     background-color: var(--sb-bg) !important;
     border-bottom: 1px solid rgba(31, 41, 55, 0.4) !important;
 }
 
-/* Botones nativos — excluye el copilot-icon explícitamente */
 .hl_header .btn-circle:not(#hl_header--copilot-icon),
 .hl_header .feedback-toggle-btn,
 .hl_header button.rounded-full,
@@ -397,7 +405,7 @@ select.removeShadow,
 }
 
 /* ============================================================
-   TOPBAR — PREGUNTAR A LA IA (copilot) — estilo original GHL
+   TOPBAR — COPILOT — estilo original GHL
    ============================================================ */
 #hl_header--copilot-icon {
     background: rgb(255, 255, 255) !important;
@@ -443,7 +451,7 @@ select.removeShadow,
 }
 
 /* ============================================================
-   TOPBAR — TELÉFONO (sin rojo en hover)
+   TOPBAR — TELÉFONO
    ============================================================ */
 .hl_header button[aria-label="Llamada de voz"],
 .hl_header button.bg-success-600 {
@@ -477,7 +485,7 @@ select.removeShadow,
 }
 
 /* ============================================================
-   TOPBAR — ASK AI (#template-power-dialer) app Vue externa
+   TOPBAR — POWER DIALER
    ============================================================ */
 #template-power-dialer,
 #template-power-dialer .hr-wrapper-container,
@@ -507,7 +515,7 @@ select.removeShadow,
 }
 
 /* ============================================================
-   TOPBAR — MEGÁFONO (#i18n-feedback) app Vue externa
+   TOPBAR — MEGÁFONO (i18n-feedback)
    ============================================================ */
 #i18n-feedback,
 #i18n-feedback .hr-wrapper-container,
@@ -547,7 +555,7 @@ select.removeShadow,
 .n-scrollbar::-webkit-scrollbar-thumb:hover { background: var(--sb-bg-darker) !important; }
 
 /* ============================================================
-   PESTAÑAS
+   PESTAÑAS TOPMENU
    ============================================================ */
 .topmenu-navitem span { color: var(--sb-icon) !important; }
 .topmenu-navitem:not(.active):hover span { color: var(--sb-text) !important; }
@@ -571,7 +579,7 @@ select.removeShadow,
 input[type="checkbox"] { accent-color: var(--sb-red) !important; }
 
 /* ============================================================
-   BOTONES
+   BOTONES NAIVE UI
    ============================================================ */
 .n-button--primary-type {
     background-color: var(--sb-bg-dark) !important;
@@ -583,7 +591,7 @@ input[type="checkbox"] { accent-color: var(--sb-red) !important; }
 }
 
 /* ============================================================
-   BUSCADOR GLOBAL
+   BUSCADOR GLOBAL Y QUICK ACTIONS
    ============================================================ */
 #globalSearchOpener {
     background-color: rgba(31, 41, 55, 0.5) !important;
@@ -608,26 +616,37 @@ input[type="checkbox"] { accent-color: var(--sb-red) !important; }
 .hl_login .alert { color: #1a1a1a !important; }
 
 /* ============================================================
-   FIX: SUBMENÚ CUENTAS — evitar desbordamiento
+   FIX DROPDOWN TOPMENU — FONDO OSCURO ALTA ESPECIFICIDAD
+   Soluciona: dropdown con fondo blanco e ítems invisibles
    ============================================================ */
-.hl_v2-location_switcher {
-    max-height: calc(100vh - 80px) !important;
-    overflow-y: auto !important;
-    overflow-x: hidden !important;
+[role="menu"].bg-white,
+div[data-v-f909ff34][role="menu"],
+.topmenu-nav div[role="menu"],
+[role="menu"] {
+    background-color: var(--sb-bg-dark) !important;
+    background: var(--sb-bg-dark) !important;
+    border-radius: 10px !important;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5) !important;
+    border: 1px solid rgba(156, 163, 175, 0.2) !important;
 }
 
-.hl_v2-location_switcher .hl_swicher-list,
-.hl_v2-location_switcher [class*="list"],
-.hl_v2-location_switcher [class*="accounts"] {
-    max-height: calc(100vh - 180px) !important;
-    overflow-y: auto !important;
+[role="menu"] a,
+[role="menu"] [role="menuitem"],
+[role="menu"] span,
+[role="menu"] * {
+    color: var(--sb-text) !important;
+    background-color: transparent !important;
 }
 
-/* ============================================================
-   FIX: SUBMENÚ CUENTAS — altura controlada
-   ============================================================ */
-.hl_v2-location_switcher {
-    max-height: 60vh !important;
-    overflow-y: auto !important;
-    overflow-x: hidden !important;
+/* Hover sutil — solo cambia fondo, NO el color del texto */
+[role="menu"] a:hover,
+[role="menu"] [role="menuitem"]:hover {
+    background-color: rgba(156, 163, 175, 0.1) !important;
+    color: var(--sb-text) !important;
+}
+
+[role="menu"] svg path,
+[role="menu"] i {
+    fill: var(--sb-text) !important;
+    stroke: var(--sb-text) !important;
 }
