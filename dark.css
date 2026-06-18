@@ -1,16 +1,16 @@
 /* ============================================================
-   ASCEND DARK GRAY THEME (PLOMO)
-   Paleta: Gris neutro con acentos rojos
+   ASCEND DARK GRAY THEME (PLOMO) v2
+   Paleta: Gris neutro #616161 con acentos rojos
    ============================================================ */
 
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
 
 :root {
-  --sb-bg:        #4B5563;
-  --sb-bg-dark:   #374151;
-  --sb-bg-darker: #1F2937;
+  --sb-bg:        #616161;
+  --sb-bg-dark:   #4a4a4a;
+  --sb-bg-darker: #333333;
   --sb-red:       #E63B4A;
-  --sb-icon:      #9CA3AF;
+  --sb-icon:      #F9FAFB;
   --sb-text:      #F9FAFB;
 }
 
@@ -27,7 +27,7 @@ div:not([class*="icon"]):not([class*="fa"]):not(.fa):not(.fas):not(.material-ico
 .hl_login {
     background-color: var(--sb-bg-darker) !important;
     background-image:
-        radial-gradient(circle at top left, rgba(75, 85, 99, 0.4), transparent 45%),
+        radial-gradient(circle at top left, rgba(97, 97, 97, 0.4), transparent 45%),
         radial-gradient(circle at bottom right, rgba(230, 59, 74, 0.15), transparent 45%) !important;
     min-height: 100vh !important;
     width: 100% !important;
@@ -80,9 +80,9 @@ select.removeShadow,
 }
 
 .hl_login .card {
-    background-color: rgba(55, 65, 81, 0.88) !important;
+    background-color: rgba(74, 74, 74, 0.88) !important;
     backdrop-filter: blur(20px) !important;
-    border: 1px solid rgba(156, 163, 175, 0.2) !important;
+    border: 1px solid rgba(249, 250, 251, 0.2) !important;
     border-radius: 20px !important;
     box-shadow: 0 20px 50px rgba(0,0,0,0.5) !important;
     padding: 35px 45px 25px 45px !important;
@@ -112,15 +112,15 @@ select.removeShadow,
 
 .hl_login .form-control,
 .hl_login input:not([type="radio"]) {
-    background-color: rgba(31, 41, 55, 0.6) !important;
-    border: 1px solid rgba(156, 163, 175, 0.25) !important;
+    background-color: rgba(51, 51, 51, 0.6) !important;
+    border: 1px solid rgba(249, 250, 251, 0.25) !important;
     color: var(--sb-text) !important;
     border-radius: 10px !important;
     height: 48px !important;
 }
 .hl_login .form-control:focus {
-    border-color: var(--sb-icon) !important;
-    box-shadow: 0 0 0 2px rgba(156, 163, 175, 0.2) !important;
+    border-color: var(--sb-text) !important;
+    box-shadow: 0 0 0 2px rgba(249, 250, 251, 0.2) !important;
 }
 
 .hl_login input::placeholder { color: transparent !important; }
@@ -138,12 +138,12 @@ select.removeShadow,
 .hl_login .btn-primary:hover,
 .hl_login button[type="submit"]:hover {
     background: var(--sb-bg-darker) !important;
-    border-color: var(--sb-icon) !important;
+    border-color: var(--sb-text) !important;
 }
 
 #wl_google_login_button {
     background-color: var(--sb-text) !important;
-    border: 1px solid rgba(75, 85, 99, 0.2) !important;
+    border: 1px solid rgba(97, 97, 97, 0.2) !important;
     border-radius: 10px !important;
     height: 48px !important;
     margin-top: 25px !important;
@@ -161,7 +161,7 @@ select.removeShadow,
 #forgot_passowrd_btn::after {
     content: "¿Olvidaste tu contraseña?" !important;
     font-size: 13px !important;
-    color: var(--sb-icon) !important;
+    color: var(--sb-text) !important;
     visibility: visible !important;
 }
 #forgot_passowrd_btn:hover::after {
@@ -172,15 +172,15 @@ select.removeShadow,
 .hl_login .control.radio {
     display: flex !important;
     align-items: center !important;
-    background: rgba(156, 163, 175, 0.07) !important;
-    border: 1px solid rgba(156, 163, 175, 0.2) !important;
+    background: rgba(249, 250, 251, 0.07) !important;
+    border: 1px solid rgba(249, 250, 251, 0.2) !important;
     border-radius: 10px !important;
     padding: 15px !important;
     margin-bottom: 15px !important;
 }
 .hl_login .control.radio:hover {
-    background: rgba(55, 65, 81, 0.5) !important;
-    border-color: var(--sb-icon) !important;
+    background: rgba(74, 74, 74, 0.5) !important;
+    border-color: var(--sb-text) !important;
 }
 .hl_login .control.radio input[type="radio"] {
     margin-right: 15px !important;
@@ -194,42 +194,42 @@ select.removeShadow,
 #sidebar-v2 .default-bg-color,
 .lead-connector {
     background-color: var(--sb-bg) !important;
-    border-right: 1px solid rgba(31, 41, 55, 0.4) !important;
+    border-right: 1px solid rgba(51, 51, 51, 0.4) !important;
 }
 
 #sidebar-v2 ::-webkit-scrollbar { width: 6px !important; }
 #sidebar-v2 ::-webkit-scrollbar-track { background: transparent !important; }
-#sidebar-v2 ::-webkit-scrollbar-thumb { background: var(--sb-icon) !important; border-radius: 10px !important; }
+#sidebar-v2 ::-webkit-scrollbar-thumb { background: var(--sb-text) !important; border-radius: 10px !important; }
 #sidebar-v2 ::-webkit-scrollbar-thumb:hover { background: var(--sb-bg-darker) !important; }
 
 #backButtonv2 {
-    background-color: rgba(156, 163, 175, 0.08) !important;
-    border: 1px solid rgba(156, 163, 175, 0.15) !important;
+    background-color: rgba(249, 250, 251, 0.08) !important;
+    border: 1px solid rgba(249, 250, 251, 0.2) !important;
     border-radius: 8px !important;
     margin-bottom: 10px !important;
     transition: all 0.25s ease !important;
 }
 #backButtonv2:hover { background-color: var(--sb-bg-dark) !important; }
 #backButtonv2 i, #backButtonv2 span {
-    color: var(--sb-icon) !important;
+    color: var(--sb-text) !important;
     transition: color 0.25s ease !important;
 }
 #backButtonv2:hover i, #backButtonv2:hover span { color: var(--sb-text) !important; }
 
 #sidebar-v2 .menu-title {
-    color: var(--sb-icon) !important;
+    color: var(--sb-text) !important;
     font-weight: 700 !important;
     font-size: 11px !important;
     letter-spacing: 0.08em !important;
     text-transform: uppercase !important;
-    border-bottom: 1px solid rgba(156, 163, 175, 0.12) !important;
+    border-bottom: 1px solid rgba(249, 250, 251, 0.2) !important;
     padding-bottom: 10px !important;
     margin-bottom: 10px !important;
 }
 
 #location-switcher-sidbar-v2 {
-    background-color: rgba(31, 41, 55, 0.3) !important;
-    border: 2px solid var(--sb-bg-darker) !important;
+    background-color: rgba(51, 51, 51, 0.3) !important;
+    border: 2px solid rgba(249, 250, 251, 0.35) !important;
     border-radius: 10px !important;
     box-shadow: 0 2px 8px rgba(0,0,0,0.3) !important;
     transition: all 0.25s ease !important;
@@ -257,7 +257,7 @@ select.removeShadow,
 
 #sidebar-v2 nav a:hover {
     background-color: var(--sb-bg-dark) !important;
-    border-left-color: var(--sb-icon) !important;
+    border-left-color: var(--sb-text) !important;
 }
 #sidebar-v2 nav a:hover span,
 #sidebar-v2 nav a:hover i {
@@ -279,11 +279,11 @@ select.removeShadow,
 }
 
 /* ============================================================
-   DESPLEGABLE DE CUENTAS
+   DESPLEGABLE DE CUENTAS (LOCATION SWITCHER FLOTANTE)
    ============================================================ */
 .hl_v2-location_switcher {
     background-color: var(--sb-bg) !important;
-    border: 1px solid rgba(156, 163, 175, 0.2) !important;
+    border: 2px solid rgba(249, 250, 251, 0.5) !important;
     border-radius: 10px !important;
     box-shadow: 0 10px 30px rgba(0,0,0,0.5) !important;
     max-height: 60vh !important;
@@ -299,28 +299,28 @@ select.removeShadow,
 }
 
 .hl_v2-location_switcher .search-area input[type="search"] {
-    background-color: rgba(31, 41, 55, 0.5) !important;
-    border: 1px solid rgba(156, 163, 175, 0.2) !important;
+    background-color: rgba(51, 51, 51, 0.5) !important;
+    border: 2px solid rgba(249, 250, 251, 0.3) !important;
     color: var(--sb-text) !important;
     border-radius: 8px !important;
 }
 .hl_v2-location_switcher .search-area input[type="search"]:focus {
-    border-color: var(--sb-icon) !important;
+    border-color: var(--sb-text) !important;
 }
 
 .hl_swicher-heading {
-    color: var(--sb-icon) !important;
+    color: var(--sb-text) !important;
     font-weight: 700 !important;
     font-size: 11px !important;
     letter-spacing: 1px !important;
     text-transform: uppercase !important;
-    border-bottom: 1px solid rgba(156, 163, 175, 0.15) !important;
+    border-bottom: 2px solid rgba(249, 250, 251, 0.3) !important;
 }
 
 .hl_account {
     border-radius: 8px !important;
     padding: 8px !important;
-    border: 1px solid rgba(255,255,255,0.15) !important;
+    border: 2px solid rgba(249, 250, 251, 0.4) !important;
     box-shadow: 0 1px 4px rgba(0,0,0,0.3) !important;
     margin-bottom: 6px !important;
     transition: all 0.2s ease !important;
@@ -339,9 +339,9 @@ select.removeShadow,
 }
 
 .hl_account .bg-gray-200 {
-    background-color: rgba(31, 41, 55, 0.5) !important;
+    background-color: rgba(51, 51, 51, 0.5) !important;
     color: var(--sb-text) !important;
-    border: 1px solid rgba(156, 163, 175, 0.3) !important;
+    border: 1px solid rgba(249, 250, 251, 0.3) !important;
 }
 
 /* ============================================================
@@ -349,7 +349,7 @@ select.removeShadow,
    ============================================================ */
 .hl_header {
     background-color: var(--sb-bg) !important;
-    border-bottom: 1px solid rgba(31, 41, 55, 0.4) !important;
+    border-bottom: 1px solid rgba(51, 51, 51, 0.4) !important;
 }
 
 .hl_header .btn-circle:not(#hl_header--copilot-icon),
@@ -357,7 +357,7 @@ select.removeShadow,
 .hl_header button.rounded-full,
 .hl_header a[role="button"]:not(#hl_header--copilot-icon) {
     background: var(--sb-bg-dark) !important;
-    border: 1px solid rgba(156, 163, 175, 0.3) !important;
+    border: 1px solid rgba(249, 250, 251, 0.3) !important;
     border-radius: 50% !important;
     transition: background 0.25s ease, border-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease !important;
 }
@@ -396,7 +396,7 @@ select.removeShadow,
 #hl_header--help-icon {
     background: transparent !important;
     box-shadow: inset 0 0 0 50px var(--sb-bg-dark) !important;
-    border: 1px solid rgba(156, 163, 175, 0.3) !important;
+    border: 1px solid rgba(249, 250, 251, 0.3) !important;
     border-radius: 50% !important;
 }
 #hl_header--help-icon:hover {
@@ -456,7 +456,7 @@ select.removeShadow,
 .hl_header button[aria-label="Llamada de voz"],
 .hl_header button.bg-success-600 {
     background-color: var(--sb-bg-dark) !important;
-    border: 1px solid rgba(156, 163, 175, 0.3) !important;
+    border: 1px solid rgba(249, 250, 251, 0.3) !important;
     border-radius: 50% !important;
     transition: background 0.25s ease, border-color 0.25s ease, transform 0.25s ease !important;
 }
@@ -496,7 +496,7 @@ select.removeShadow,
 #template-power-dialer a[role="button"] {
     background-color: var(--sb-bg-dark) !important;
     background-image: none !important;
-    border: 1px solid rgba(156, 163, 175, 0.3) !important;
+    border: 1px solid rgba(249, 250, 251, 0.3) !important;
     border-radius: 50% !important;
     transition: background 0.25s ease, border-color 0.25s ease, transform 0.25s ease !important;
 }
@@ -526,7 +526,7 @@ select.removeShadow,
 #i18n-feedback .feedback-toggle-btn {
     background-color: var(--sb-bg-dark) !important;
     background-image: none !important;
-    border: 1px solid rgba(156, 163, 175, 0.3) !important;
+    border: 1px solid rgba(249, 250, 251, 0.3) !important;
     border-radius: 50% !important;
     transition: background 0.25s ease, border-color 0.25s ease, transform 0.25s ease !important;
 }
@@ -550,14 +550,14 @@ select.removeShadow,
 #location-dashboard::-webkit-scrollbar,
 .n-scrollbar::-webkit-scrollbar { width: 6px !important; }
 #location-dashboard::-webkit-scrollbar-thumb,
-.n-scrollbar::-webkit-scrollbar-thumb { background: var(--sb-icon) !important; border-radius: 10px !important; }
+.n-scrollbar::-webkit-scrollbar-thumb { background: var(--sb-text) !important; border-radius: 10px !important; }
 #location-dashboard::-webkit-scrollbar-thumb:hover,
 .n-scrollbar::-webkit-scrollbar-thumb:hover { background: var(--sb-bg-darker) !important; }
 
 /* ============================================================
    PESTAÑAS TOPMENU
    ============================================================ */
-.topmenu-navitem span { color: var(--sb-icon) !important; }
+.topmenu-navitem span { color: var(--sb-text) !important; }
 .topmenu-navitem:not(.active):hover span { color: var(--sb-text) !important; }
 .topmenu-navitem.active { border-bottom-color: var(--sb-text) !important; }
 .topmenu-navitem.active span { color: var(--sb-text) !important; }
@@ -571,7 +571,7 @@ select.removeShadow,
    ============================================================ */
 .n-checkbox.n-checkbox--checked .n-checkbox-box {
     background-color: var(--sb-bg-darker) !important;
-    border-color: var(--sb-icon) !important;
+    border-color: var(--sb-text) !important;
 }
 .n-checkbox.n-checkbox--checked .n-checkbox-box .n-checkbox-icon {
     color: var(--sb-text) !important;
@@ -583,7 +583,7 @@ input[type="checkbox"] { accent-color: var(--sb-red) !important; }
    ============================================================ */
 .n-button--primary-type {
     background-color: var(--sb-bg-dark) !important;
-    border-color: rgba(156, 163, 175, 0.3) !important;
+    border-color: rgba(249, 250, 251, 0.3) !important;
     color: var(--sb-text) !important;
 }
 .n-button--primary-type:hover {
@@ -594,14 +594,14 @@ input[type="checkbox"] { accent-color: var(--sb-red) !important; }
    BUSCADOR GLOBAL Y QUICK ACTIONS
    ============================================================ */
 #globalSearchOpener {
-    background-color: rgba(31, 41, 55, 0.5) !important;
-    border: 1px solid rgba(156, 163, 175, 0.2) !important;
+    background-color: rgba(51, 51, 51, 0.5) !important;
+    border: 1px solid rgba(249, 250, 251, 0.2) !important;
     border-radius: 8px !important;
 }
 #globalSearchOpener:hover {
-    background-color: rgba(31, 41, 55, 0.7) !important;
+    background-color: rgba(51, 51, 51, 0.7) !important;
 }
-#globalSearchOpener .search-placeholder { color: var(--sb-icon) !important; }
+#globalSearchOpener .search-placeholder { color: var(--sb-text) !important; }
 
 #quickActions {
     background-color: var(--sb-red) !important;
@@ -616,8 +616,7 @@ input[type="checkbox"] { accent-color: var(--sb-red) !important; }
 .hl_login .alert { color: #1a1a1a !important; }
 
 /* ============================================================
-   FIX DROPDOWN TOPMENU — FONDO OSCURO ALTA ESPECIFICIDAD
-   Soluciona: dropdown con fondo blanco e ítems invisibles
+   FIX DROPDOWN TOPMENU
    ============================================================ */
 [role="menu"].bg-white,
 div[data-v-f909ff34][role="menu"],
@@ -627,7 +626,7 @@ div[data-v-f909ff34][role="menu"],
     background: var(--sb-bg-dark) !important;
     border-radius: 10px !important;
     box-shadow: 0 10px 30px rgba(0,0,0,0.5) !important;
-    border: 1px solid rgba(156, 163, 175, 0.2) !important;
+    border: 2px solid rgba(249, 250, 251, 0.25) !important;
 }
 
 [role="menu"] a,
@@ -638,10 +637,9 @@ div[data-v-f909ff34][role="menu"],
     background-color: transparent !important;
 }
 
-/* Hover sutil — solo cambia fondo, NO el color del texto */
 [role="menu"] a:hover,
 [role="menu"] [role="menuitem"]:hover {
-    background-color: rgba(156, 163, 175, 0.1) !important;
+    background-color: rgba(249, 250, 251, 0.1) !important;
     color: var(--sb-text) !important;
 }
 
