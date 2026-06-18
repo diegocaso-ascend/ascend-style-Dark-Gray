@@ -566,6 +566,9 @@ select.removeShadow,
 .n-tabs-tab--active .n-tabs-tab__label { color: var(--sb-text) !important; }
 .n-tabs-bar { background-color: var(--sb-text) !important; }
 
+.topmenu-navtitle {
+    color: var(--sb-text) !important;
+}
 /* ============================================================
    CHECKBOXES
    ============================================================ */
